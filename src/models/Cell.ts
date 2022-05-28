@@ -11,9 +11,9 @@ export class Cell {
     available: boolean;  //can figure move to the cell
     id: number  // for react's keys
 
-    constructor(board: Board, x: number, y: number, color: Colors, figure: Figure | null) {
-        this.x = x;
+    constructor(board: Board, y: number, x: number, color: Colors, figure: Figure | null) {
         this.y = y;
+        this.x = x;
         this.color = color;
         this.figure = figure;
         this.board = board;

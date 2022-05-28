@@ -40,3 +40,17 @@
 .light {
     background-color: #c09b82;
 }
+.selected {
+    background-color: #cc7a50;
+}
+
+.available {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #176565;
+}
+
+.availableFigure {
+    background-color: #769a8c;
+}

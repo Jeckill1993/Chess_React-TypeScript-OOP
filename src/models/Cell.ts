@@ -20,4 +20,27 @@ export class Cell {
         this.available = false;
         this.id = Math.random();
     }
+
+    isEmptyVertical(target: Cell): boolean {
+        if (this.x !== target.x) return false;
+
+        return true;
+    }
+
+    isEmptyHorizontal(target: Cell): boolean {
+        return true;
+    }
+
+    isEmptyDiagonal(target: Cell): boolean {
+        return true;
+    }
+
+    public moveFigure(target: Cell) {
+        if (this.figure && this.figure?.canMove(target)) {
+            this.figure.moveFigure(target);
+            target.figure = this.figure;
+            this.figure = null;
+        }
+    }
+
 }

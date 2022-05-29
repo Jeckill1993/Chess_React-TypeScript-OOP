@@ -6,10 +6,13 @@ import {King} from "./figures/King";
 import {Knight} from "./figures/Knight";
 import {Pawn} from "./figures/Pawn";
 import {Rook} from "./figures/Rook";
+import {Figure} from "./figures/Figure";
 
 export class Board {
 
     cells: Cell[][] = [];   // многомерный массив ( массив с колонками (колонка - массив ячеек) )
+    lostDarkFigures: Figure[] = [];
+    lostLightFigures: Figure[] = [];
 
     public initCells() {
         for (let i = 0; i < 8; i++) {
@@ -41,6 +44,12 @@ export class Board {
         this.addPawns();
     }
 
+    addLostFigure (figure: Figure) {
+        figure.color === Colors.DARK
+            ? this.lostDarkFigures.push(figure)
+            : this.lostLightFigures.push(figure);
+    }
+
     public highLightCells(selectedCell: Cell | null) {
         for (let i = 0; i < this.cells.length; i ++) {
             const row = this.cells[i];
@@ -55,6 +64,8 @@ export class Board {
     public getCopyBoard(): Board {
         const newBoard = new Board();
         newBoard.cells = this.cells;
+        newBoard.lostDarkFigures = this.lostDarkFigures;
+        newBoard.lostLightFigures = this.lostLightFigures;
         return newBoard;
     }
 

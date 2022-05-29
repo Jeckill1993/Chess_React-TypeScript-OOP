@@ -12,11 +12,21 @@
     align-items: center;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
     width: calc(64px * 8);
     height: calc(64px * 8);
     display: flex;
     flex-wrap: wrap;
+}
+
+.board-title {
+    margin-bottom: 20px;
 }
 
 .cell {
@@ -53,4 +63,21 @@
 
 .availableFigure {
     background-color: #769a8c;
+}
+
+.lost-container {
+    margin-left: 40px;
+}
+
+.lost {
+    height: calc(48px * 4);
+    width: calc(48px * 4);
+    padding: 30px;
+    margin: 0 20px;
+    background-color: #d4d7e3;
+}
+
+.lost__icon {
+    width: 20px;
+    height: 20px;
 }
